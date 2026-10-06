@@ -1,0 +1,27 @@
+<resources>
+    <style name="Theme.SeedMas" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:colorAccent">@color/primary</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="TextAppearance.SeedMas.SectionTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SeedMas.SectionHelper" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="SettingsLabel" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+</resources>

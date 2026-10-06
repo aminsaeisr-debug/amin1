@@ -1,0 +1,16 @@
+<resources>
+    <color name="primary">#0B6E4F</color>
+    <color name="on_primary_secondary">#D8F3E8</color>
+    <color name="primary_dark">#074936</color>
+    <color name="primary_soft">#E6F3ED</color>
+    <color name="accent">#53B874</color>
+    <color name="background">#F4F8F6</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#19332A</color>
+    <color name="text_secondary">#5F726A</color>
+    <color name="border">#D9E5DF</color>
+    <color name="danger">#C74343</color>
+    <color name="warning">#A76D13</color>
+    <color name="success">#1F8A5B</color>
+    <color name="camera_scrim">#B3000000</color>
+</resources>

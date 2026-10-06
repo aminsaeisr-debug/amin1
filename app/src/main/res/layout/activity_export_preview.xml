@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:layoutDirection="rtl">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/primary"
+        android:title="@string/preview_excel"
+        android:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:orientation="vertical"
+        android:padding="12dp">
+        <TextView
+            android:id="@+id/previewCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/openExcel"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="@string/open_excel"
+                android:textAllCaps="false"
+                app:cornerRadius="15dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/shareExcel"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                android:text="@string/export_excel"
+                android:textAllCaps="false"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_soft"
+        android:fillViewport="false"
+        android:scrollbars="horizontal">
+        <LinearLayout
+            android:id="@+id/previewHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layoutDirection="rtl" />
+    </HorizontalScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/previewList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="6dp" />
+</LinearLayout>

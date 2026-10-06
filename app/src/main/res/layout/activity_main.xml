@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/mainScroll"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/primary"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="18dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/app_subtitle"
+                        android:textColor="@color/on_primary_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <ImageButton
+                    android:id="@+id/settings"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/settings"
+                    android:src="@drawable/ic_settings"
+                    android:tint="@android:color/white" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/today"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:gravity="center"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/border"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/session_info"
+                    android:textColor="@color/text_primary"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/variety_hint_required"
+                    app:boxBackgroundMode="outline">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/variety"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/customer_hint"
+                    app:boxBackgroundMode="outline">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/customer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences"
+                        android:imeOptions="actionDone"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/start"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/start_session"
+                    android:textAllCaps="false"
+                    app:cornerRadius="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/primary_soft"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/border"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <TextView
+                    android:id="@+id/active"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/historySummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/border"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recording_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/scan"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/open_camera"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/success"
+                    app:cornerRadius="18dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/manual_hint_2_16"
+                        app:boxBackgroundMode="outline">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/manual"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:digits="0123456789۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩"
+                            android:maxLength="32"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/add_number"
+                        android:textAllCaps="false"
+                        app:cornerRadius="16dp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/settingsCard"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/border"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_title_main"
+                    android:textColor="@color/text_primary"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/settings_subtitle"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView style="@style/TextAppearance.SeedMas.SectionTitle" android:layout_marginTop="15dp" android:text="@string/settings_scan" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/settings_scan_help" />
+
+                <TextView style="@style/SettingsLabel" android:text="@string/scan_mode_label" />
+                <Spinner android:id="@+id/scanMode" android:layout_width="match_parent" android:layout_height="48dp" />
+                <TextView style="@style/SettingsLabel" android:text="@string/recognition_mode_label" />
+                <Spinner android:id="@+id/recognitionMode" android:layout_width="match_parent" android:layout_height="48dp" />
+                <TextView style="@style/SettingsLabel" android:text="@string/number_scan_mode_label" />
+                <Spinner android:id="@+id/numberScanMode" android:layout_width="match_parent" android:layout_height="48dp" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/number_scan_mode_help" />
+                <TextView style="@style/SettingsLabel" android:text="@string/scan_quality_label" />
+                <Spinner android:id="@+id/scanQuality" android:layout_width="match_parent" android:layout_height="48dp" />
+                <TextView style="@style/SettingsLabel" android:text="@string/scan_window_label" />
+                <Spinner android:id="@+id/scanWindow" android:layout_width="match_parent" android:layout_height="48dp" />
+                <TextView style="@style/SettingsLabel" android:text="@string/stable_reads_label" />
+                <Spinner android:id="@+id/stableReads" android:layout_width="match_parent" android:layout_height="48dp" />
+
+                <TextView style="@style/SettingsLabel" android:text="@string/number_length_label" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <NumberPicker android:id="@+id/minDigits" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="14dp" android:text="تا" android:textColor="@color/text_primary" android:textStyle="bold" />
+                    <NumberPicker android:id="@+id/maxDigits" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                </LinearLayout>
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/number_length_help" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/autoZoom" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/auto_zoom" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/auto_zoom_help" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/autoFocus" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/auto_focus_setting" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/auto_focus_help" />
+                <TextView style="@style/SettingsLabel" android:text="@string/flash_default_label" />
+                <Spinner android:id="@+id/defaultFlash" android:layout_width="match_parent" android:layout_height="48dp" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/duplicateCheck" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/duplicate_check" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/duplicate_check_help" />
+
+                <TextView style="@style/TextAppearance.SeedMas.SectionTitle" android:layout_marginTop="15dp" android:text="@string/settings_frame" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/frame_slider_help" />
+                <TextView android:id="@+id/frameWidthValue" style="@style/SettingsLabel" android:text="@string/frame_width_value_default" />
+                <com.google.android.material.slider.Slider android:id="@+id/frameWidth" android:layout_width="match_parent" android:layout_height="44dp" android:stepSize="1" android:valueFrom="56" android:valueTo="96" />
+                <TextView android:id="@+id/frameHeightValue" style="@style/SettingsLabel" android:text="@string/frame_height_value_default" />
+                <com.google.android.material.slider.Slider android:id="@+id/frameHeight" android:layout_width="match_parent" android:layout_height="44dp" android:stepSize="1" android:valueFrom="12" android:valueTo="58" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/frame_live_help" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/resetFrame" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="7dp" android:text="@string/frame_reset" android:textAllCaps="false" app:cornerRadius="15dp" />
+
+                <TextView style="@style/TextAppearance.SeedMas.SectionTitle" android:layout_marginTop="15dp" android:text="@string/settings_feedback" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/haptic" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/haptic" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/sound" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/sound" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/sound_help" />
+                <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/voiceGuidance" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/voice_guidance" />
+
+                <TextView style="@style/TextAppearance.SeedMas.SectionTitle" android:layout_marginTop="15dp" android:text="@string/settings_excel" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/excel_settings_help" />
+                <TextView style="@style/SettingsLabel" android:text="@string/date_output_label" />
+                <RadioGroup android:id="@+id/dateOutput" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/dateJalali" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/date_jalali" />
+                    <RadioButton android:id="@+id/dateGregorian" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/date_gregorian" />
+                    <RadioButton android:id="@+id/dateBoth" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/date_both" />
+                </RadioGroup>
+                <TextView style="@style/SettingsLabel" android:text="@string/columns_label" />
+                <CheckBox android:id="@+id/outRow" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/out_row" />
+                <CheckBox android:id="@+id/outVariety" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/out_variety" />
+                <CheckBox android:id="@+id/outCustomer" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/out_customer" />
+                <CheckBox android:id="@+id/outNumber" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/out_number" />
+                <CheckBox android:id="@+id/outBarcode" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/out_barcode" />
+                <CheckBox android:id="@+id/outTime" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/out_time" />
+                <CheckBox android:id="@+id/outSession" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/out_session" />
+
+                <TextView style="@style/TextAppearance.SeedMas.SectionTitle" android:layout_marginTop="15dp" android:text="@string/settings_data" />
+                <TextView style="@style/TextAppearance.SeedMas.SectionHelper" android:text="@string/data_help" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/backupNow" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="7dp" android:text="@string/backup_now" android:textAllCaps="false" app:cornerRadius="15dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/restoreBackup" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="6dp" android:text="@string/restore_backup" android:textAllCaps="false" app:cornerRadius="15dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/resetSettings" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="6dp" android:text="@string/reset_settings" android:textAllCaps="false" app:cornerRadius="15dp" />
+                <TextView
+                    android:id="@+id/settingsAutoSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/settings_auto_save"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/border"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/history_search_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/history_search_hint"
+                    app:boxBackgroundMode="outline">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/historySearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:imeOptions="actionSearch"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/historySearchCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/history_search_help"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@color/background"
+                    android:clipToPadding="false"
+                    android:padding="5dp"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/surface"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/border"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/excel_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/export_preview_subtitle"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/previewExcel"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="@string/preview_excel"
+                        android:textAllCaps="false"
+                        app:cornerRadius="15dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/export"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_weight="1"
+                        android:text="@string/export_excel"
+                        android:textAllCaps="false"
+                        app:cornerRadius="15dp" />
+                </LinearLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/backup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="7dp"
+                    android:text="@string/backup_json"
+                    android:textAllCaps="false"
+                    app:cornerRadius="15dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/finish"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="@string/finish_variety"
+                android:textAllCaps="false"
+                app:cornerRadius="16dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/delete"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                android:text="@string/delete_all"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/danger"
+                app:cornerRadius="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/footerVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="18dp"
+            android:text="@string/footer_version"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
